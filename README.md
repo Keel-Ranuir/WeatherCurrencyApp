@@ -1,2 +1,2 @@
 # WeatherCurrencyApp
-Application to predict dollar
+Application to predict dollar currency by weather
