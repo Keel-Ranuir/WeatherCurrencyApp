@@ -10,7 +10,7 @@ public class PredictService {
     private final SimpleRegression regression;
     private final WeatherService weatherService;
     private final CurrencyService currencyService;
-    private final static int DATASET_SIZE = 7;
+    private static final int DATASET_SIZE = 7;
 
     public PredictService(WeatherService weatherService, CurrencyService currencyService)  {
         this.weatherService = weatherService;

@@ -32,7 +32,7 @@ public class CurrencyService {
         String body = responseEntity.getBody();
         String start = "Доллар США</Name><Value>";
         int startIndex = body.indexOf(start) + start.length();
-        int endIndex = body.indexOf("<", startIndex);
+        int endIndex = body.indexOf('<', startIndex);
         return Double.parseDouble(body.substring(startIndex, endIndex).replace(",", "."));
     }
 
