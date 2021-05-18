@@ -1,0 +1,9 @@
+---
+ansible_ssh_user : mftiedu
+ansible_ssh_pass : cHONtic
+ansible_sudo_pass : cHONtic
+eureka_image_name : keelranuir/eurekaservice
+weather_service_image_name : keelranuir/weatherservice
+currency_service_image_name : keelranuir/currencyservice
+predict_service_image_name : keelranuir/predictservice
+deploy_path : /edu/timofeevaOI
