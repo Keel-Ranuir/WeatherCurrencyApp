@@ -1,6 +1,5 @@
-package edu.phystech.weather_currency_app.controllers;
+package edu.phystech.currencyservice;
 
-import edu.phystech.weather_currency_app.services.CurrencyService;
 import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -9,10 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class CurrencyController {
+public class Controller {
     private final CurrencyService currencyService;
 
-    public CurrencyController(CurrencyService currencyService) {
+    public Controller(CurrencyService currencyService) {
         this.currencyService = currencyService;
     }
 

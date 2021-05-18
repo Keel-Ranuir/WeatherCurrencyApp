@@ -1,6 +1,5 @@
-package edu.phystech.weather_currency_app.controllers;
+package edu.phystech.weatherservice;
 
-import edu.phystech.weather_currency_app.services.WeatherService;
 import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -9,10 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class WeatherController {
+public class Controller {
     private final WeatherService weatherService;
 
-    public WeatherController(WeatherService weatherService) {
+    public Controller(WeatherService weatherService) {
         this.weatherService = weatherService;
     }
 
@@ -23,5 +22,13 @@ public class WeatherController {
             return weatherService.getWeatherHistory(daysNum);
         }
         return weatherService.getWeatherHistory(daysNum, city);
+    }
+
+    @GetMapping("/forecast")
+    public double getForecast(@RequestParam @Nullable String city) {
+        if (city == null) {
+            return weatherService.getWeatherForecast();
+        }
+        return weatherService.getWeatherForecast(city);
     }
 }

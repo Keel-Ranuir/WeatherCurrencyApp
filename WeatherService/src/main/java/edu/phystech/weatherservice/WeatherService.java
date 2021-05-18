@@ -1,11 +1,13 @@
-package edu.phystech.weather_currency_app.services;
+package edu.phystech.weatherservice;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDate;
@@ -13,8 +15,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
+@EnableDiscoveryClient
+@SpringBootApplication
 public class WeatherService {
+
     private static final String API_KEY = "64ee59d7904f4bbb8f3195525201812";
     private static final String DEFAULT_CITY = "Moscow";
     private final RestTemplate restTemplate;
@@ -76,4 +80,9 @@ public class WeatherService {
     private String createForecastRequestUrl(String city) {
         return "http://api.weatherapi.com/v1/forecast.json" + "?key=" + API_KEY + "&q=" + city + "&days=1";
     }
+
+    public static void main(String[] args) {
+        SpringApplication.run(WeatherService.class, args);
+    }
+
 }

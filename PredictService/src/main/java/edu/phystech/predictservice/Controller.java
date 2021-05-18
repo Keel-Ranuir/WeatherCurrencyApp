@@ -1,14 +1,13 @@
-package edu.phystech.weather_currency_app.controllers;
+package edu.phystech.predictservice;
 
-import edu.phystech.weather_currency_app.services.PredictService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class PredictController {
+public class Controller {
     private final PredictService predictService;
 
-    public PredictController(PredictService predictService) {
+    public Controller(PredictService predictService) {
         this.predictService = predictService;
     }
 
