@@ -3,4 +3,4 @@ EXPOSE 8761
 RUN mkdir eureka
 COPY target/eureka-0.0.1-SNAPSHOT.jar /eureka
 WORKDIR /eureka
-CMD ["java", "-jar", "eurekaserver-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "eureka-0.0.1-SNAPSHOT.jar"]
